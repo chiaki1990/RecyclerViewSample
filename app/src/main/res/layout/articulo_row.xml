@@ -5,7 +5,31 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/row_title"
+        android:id="@+id/tvRowTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tvRowDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tvRowImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tvRowCreatedAt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tvRowCategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView" />

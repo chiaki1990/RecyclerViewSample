@@ -49,21 +49,37 @@ class RecyclerViewActivity : AppCompatActivity() {
                 var dataArrayList: ArrayList<RowModel> = arrayListOf()
 
                 //responseを解析する
-                println("RESPONSEの結果　：　")
-                //println(response.body())
-                var item_objects_count = response.body()?.item_objects_count
-                println("COUNT : " + item_objects_count)
+                //println("RESPONSEの結果　：　")
+                println(response.body())
+                //var item_objects_count = response.body()?.item_objects_count!!.toInt()
+                //println("COUNT : " + item_objects_count)
                 var itemSerializerList:List<ItemSerializerModel>? = response.body()?.itemSerializer
 
+
                 for (numero in 0..itemSerializerList!!.size-1){
-                    println("番号 : "+ numero)
-                    println(itemSerializerList[numero])
+                //for (numero in 0..item_objects_count){
+
+                    //println("番号 : "+ numero)
+                    //println(itemSerializerList[numero])
                     var title = itemSerializerList[numero].title
-                    dataArrayList.add(RowModel(title=title))
+                    var description = itemSerializerList[numero].description
+                    var category = itemSerializerList[numero].category.name
+                    var created_at = itemSerializerList[numero].created_at
+                    var image = itemSerializerList[numero].image1
+
+                    dataArrayList.add(
+                        RowModel(
+                            title = title,
+                            description = description,
+                            category = category,
+                            created_at = created_at,
+                            image = image
+                            ))
+
+                }
 
 
-
-                    // recyclerviewオブジェクトのapplyの要素の一つを生成する
+                // recyclerviewオブジェクトのapplyの要素の一つを生成する
                     var viewManager = LinearLayoutManager(this@RecyclerViewActivity)
 
                     // recyclerviewオブジェクトのapplyの要素の一つを生成する
@@ -83,10 +99,6 @@ class RecyclerViewActivity : AppCompatActivity() {
                         adapter = viewAdapter
 
                     }
-
-                }
-
-
 
             }
 
