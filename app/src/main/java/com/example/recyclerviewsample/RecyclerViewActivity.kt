@@ -42,8 +42,6 @@ class RecyclerViewActivity : AppCompatActivity() {
                 call: Call<ItemDarListSerializerViewModel>,
                 response: Response<ItemDarListSerializerViewModel>
             ) {
-                //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-
 
                 //List<RowModel>を生成する
                 var dataArrayList: ArrayList<RowModel> = arrayListOf()
@@ -103,7 +101,6 @@ class RecyclerViewActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<ItemDarListSerializerViewModel>, t: Throwable) {
-                //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
                 println(t)
             }
         })
